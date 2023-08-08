@@ -134,4 +134,19 @@ public class GameService {
     public Optional<Game> getGameById(int id){
         return gameRepository.findById(id);
     }
+
+    public List<Game> getAllCompletedGames(){
+////        List<Game> completedGames = new ArrayList<>();
+////        List<Game> allGames = getAllGames();
+////        for(Game game: allGames){
+////            if(game.isComplete()){
+////                completedGames.add(game);
+////            }
+////        }
+        return gameRepository.findByCompleteTrue();
+    }
+
+    public List<Game> findGamesByWord(String word){
+        return gameRepository.findByWord(word);
+    }
 }
